@@ -7,6 +7,8 @@ Demo saving and displaying safe sanitized content using the Angular DomSanitizer
 2. Asp.Net Core
 3. MediatR
 4. EF Core
+5. Sass
+6. RxJS (OnPush Change Detection) 
 
 ## Give a Star! :star:
 
