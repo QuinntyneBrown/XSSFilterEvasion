@@ -32,7 +32,7 @@ export class HtmlEditorComponent implements ControlValueAccessor  {
   registerOnChange(fn: any): void {
     this.formControl.valueChanges
     .pipe(
-      map(x => this._domSanitizer.sanitize(SecurityContext.HTML, x))
+      map(html => this._domSanitizer.sanitize(SecurityContext.HTML, html))
     )
     .subscribe(fn);
   }
