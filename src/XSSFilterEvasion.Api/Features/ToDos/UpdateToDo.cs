@@ -4,6 +4,7 @@ using MediatR;
 using System;
 using System.Threading;
 using System.Threading.Tasks;
+using XSSFilterEvasion.Api.ValueObjects;
 
 namespace XSSFilterEvasion.Api.Features
 {
@@ -37,7 +38,7 @@ namespace XSSFilterEvasion.Api.Features
 
                 var toDo = await _context.ToDos.FindAsync(request.ToDo.ToDoId);
 
-                toDo.HtmlBody = request.ToDo.HtmlBody;
+                toDo.HtmlBody = (Html)request.ToDo.HtmlBody;
                 toDo.Name = request.ToDo.Name;
                 toDo.Completed = request.ToDo.Completed;
                 toDo.Modified = DateTime.Now;

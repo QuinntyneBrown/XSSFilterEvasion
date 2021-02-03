@@ -1,4 +1,5 @@
 using XSSFilterEvasion.Api.Models;
+using XSSFilterEvasion.Api.ValueObjects;
 
 namespace XSSFilterEvasion.Api.Features
 {
@@ -10,7 +11,7 @@ namespace XSSFilterEvasion.Api.Features
             {
                 ToDoId = toDo.ToDoId,
                 Name = toDo.Name,
-                HtmlBody = toDo.HtmlBody,
+                HtmlBody = Html.Create(toDo.HtmlBody).Value,
                 Completed = toDo.Completed,
                 Modified = toDo.Modified
             };
