@@ -4,6 +4,7 @@ using XSSFilterEvasion.Api.Models;
 using MediatR;
 using System.Threading;
 using System.Threading.Tasks;
+using Ganss.XSS;
 
 namespace XSSFilterEvasion.Api.Features
 {
@@ -40,8 +41,12 @@ namespace XSSFilterEvasion.Api.Features
                 _context.ToDos.Add(toDo);
 
                 toDo.Name = request.ToDo.Name;
+
+                // Extra protection 
+                //toDo.HtmlBody = new HtmlSanitizer().Sanitize(request.ToDo.HtmlBody);
+
                 toDo.HtmlBody = request.ToDo.HtmlBody;
-                
+
                 await _context.SaveChangesAsync(cancellationToken);
 
                 return new Response()
