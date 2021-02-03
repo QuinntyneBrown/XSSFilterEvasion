@@ -2,7 +2,7 @@
 
 Demo saving and displaying safe sanitized content using the Angular DomSanitizer.
 
-## Other Tech User
+## Other Tech Used:
 1. Ngrx Component Store
 2. Asp.Net Core
 3. MediatR
