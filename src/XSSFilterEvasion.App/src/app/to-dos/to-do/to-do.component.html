@@ -1,0 +1,6 @@
+<div *ngIf="vm$ | async as vm">
+
+    <h1><span (click)="back()"><</span>{{ vm.toDo.name }}</h1>
+
+    <div [innerHTML]="vm.toDo.htmlBody"></div>
+</div>

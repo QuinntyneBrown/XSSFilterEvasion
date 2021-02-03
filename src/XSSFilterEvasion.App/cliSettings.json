@@ -1,0 +1,9 @@
+{  
+    "RootNamespace": "XSSFilterEvasion",
+    "Namespace": "XSSFilterEvasion.Api",
+    "Domain": "",
+    "Api": "XSSFilterEvasion.Api",
+    "Core": "",
+    "EntityIdDataType": "Guid"
+  }
+  

@@ -1,0 +1,17 @@
+<mat-card *ngIf="vm$ | async as vm">
+
+    <h1 *ngIf="toDo$ | async">Edit ToDo</h1>
+    <h1 *ngIf="!(toDo$ | async)">Create ToDo</h1>
+    <form [formGroup]="vm.form">
+        <app-to-do-editor formControlName="toDo">
+        </app-to-do-editor>
+    </form>
+
+    <div class="actions">
+        <button mat-raised-button (click)="save(vm)" color="primary" [disabled]="!vm.form.dirty">Save</button>
+
+        <button mat-raised-button (click)="cancel()">Cancel</button>
+    </div>
+
+
+</mat-card>
