@@ -1,9 +1,9 @@
 using FluentValidation;
-using XSSFilterEvasion.Api.Data;
-using XSSFilterEvasion.Api.Models;
 using MediatR;
 using System.Threading;
 using System.Threading.Tasks;
+using XSSFilterEvasion.Api.Data;
+using XSSFilterEvasion.Api.Models;
 using XSSFilterEvasion.Api.ValueObjects;
 
 namespace XSSFilterEvasion.Api.Features
@@ -42,14 +42,11 @@ namespace XSSFilterEvasion.Api.Features
 
                 toDo.Name = request.ToDo.Name;
 
-                // Extra protection 
-                //toDo.HtmlBody = new Ganss.XSS.HtmlSanitizer().Sanitize(request.ToDo.HtmlBody);
-
                 toDo.HtmlBody = (Html)request.ToDo.HtmlBody;
 
                 await _context.SaveChangesAsync(cancellationToken);
 
-                return new Response()
+                return new ()
                 {
                     ToDo = toDo.ToDto()
                 };

@@ -1,10 +1,4 @@
 <mat-card *ngIf="vm$ | async as vm">
-
-    <div>
-        {{ vm.form.controls['toDo'].touched }}
-
-        {{ vm.form.controls['toDo'].dirty }}
-    </div>
     <h1 *ngIf="toDo$ | async">Edit ToDo</h1>
     <h1 *ngIf="!(toDo$ | async)">Create ToDo</h1>
     <form [formGroup]="vm.form">

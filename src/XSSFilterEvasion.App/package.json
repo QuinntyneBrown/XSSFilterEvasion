@@ -23,6 +23,7 @@
     "@angular/router": "~11.0.0",
     "@ngrx/component-store": "^10.1.2",
     "jquery": "^3.5.1",
+    "js-base64": "^3.6.0",
     "ngx-summernote": "^0.8.0",
     "rxjs": "~6.6.0",
     "summernote": "^0.8.18",

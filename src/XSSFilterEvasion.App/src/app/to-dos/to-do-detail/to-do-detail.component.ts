@@ -38,6 +38,8 @@ export class ToDoDetailComponent implements OnDestroy {
 
   public save(vm: { form: FormGroup}) {
     const toDo = vm.form.value.toDo;
+
+
     let obs$: Observable<{toDo: ToDo }>;
     if(toDo.toDoId) {
       obs$ = this._toDoService.update({ toDo })
